@@ -116,6 +116,21 @@ last
 who
 
 ```
+## 5. Controle de acesso a diretórios por grupo
+
+Para demonstrar, na prática, como controlar o acesso a recursos de acordo com papéis, foi criado o diretório `/srv/dev-projeto`, exclusivo para o grupo `dev`.
+
+### Criação e configuração do diretório
+
+```bash
+# criar diretório do projeto
+sudo mkdir -p /srv/dev-projeto
+
+# definir dono e grupo: root como owner, grupo dev como group owner
+sudo chown root:dev /srv/dev-projeto
+
+# permissões: owner rwx, group rwx, others sem acesso
+sudo chmod 770 /srv/dev-projeto
 
 
 
